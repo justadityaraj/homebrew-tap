@@ -1,8 +1,8 @@
 class Foldout < Formula
   desc "Quick Look previews for folders, git repos, zip archives and Markdown"
   homepage "https://dev.adityarajsingh.com/foldout/"
-  url "https://github.com/justadityaraj/foldout-folder-preview/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "ca13f7aaa2554c458ce75ad3e59b521d927bc1136ebb89dfe7eb0bca81c286c7"
+  url "https://github.com/justadityaraj/foldout-folder-preview/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "e7712c90866444841a54da2c3f6591590c4f655a07be74bc4b6b95b47f73b171"
   license "MIT"
 
   depends_on macos: :sonoma
