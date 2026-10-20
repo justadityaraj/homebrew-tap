@@ -11,7 +11,8 @@ class Foldout < Formula
     %w[Foldout FoldoutPreview FoldoutSelfCheck].each do |product|
       system "swift", "build", "--disable-sandbox", "--configuration", "release", "--product", product
     end
-    bin_path = Pathname(Utils.safe_popen_read("swift", "build", "--configuration", "release", "--show-bin-path").chomp)
+    bin_path = Utils.safe_popen_read("swift", "build", "--configuration", "release", "--show-bin-path")
+    bin_path = Pathname(bin_path.chomp)
 
     app = prefix/"Foldout.app/Contents"
     appex = app/"PlugIns/FoldoutPreview.appex/Contents"
