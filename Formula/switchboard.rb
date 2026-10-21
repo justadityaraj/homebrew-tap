@@ -1,8 +1,8 @@
 class Switchboard < Formula
   desc "Menu-bar browser picker that opens each link in the right browser or profile"
   homepage "https://dev.adityarajsingh.com/switchboard/"
-  url "https://github.com/justadityaraj/switchboard-browser-picker/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "5fbfcc13367cff4d21b7aa41e4570b75feeabec9f19c4e3219db9514ca5ab4d3"
+  url "https://github.com/justadityaraj/switchboard-browser-picker/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "0655988020463ddac99acf53f6199d83d084a3aa683cfb1af23a3d229c9bb653"
   license "MIT"
 
   depends_on macos: :sonoma
