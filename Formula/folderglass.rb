@@ -21,6 +21,10 @@ class Folderglass < Formula
     (app/"Resources").install "Resources/AppIcon.icns"
     (appex/"MacOS").install bin_path/"FolderglassPreview"
     appex.install "Resources/Preview-Info.plist" => "Info.plist"
+    strings = bin_path/"Folderglass_FolderglassUI.bundle"
+    cp_r strings, app/"Resources"
+    (appex/"Resources").mkpath
+    cp_r strings, appex/"Resources"
     libexec.install bin_path/"FolderglassSelfCheck"
     system "codesign", "--force", "--sign", "-", "--entitlements", "Resources/Preview.entitlements",
            prefix/"Folderglass.app/Contents/PlugIns/FolderglassPreview.appex"
@@ -42,5 +46,6 @@ class Folderglass < Formula
     assert_match "All checks passed", shell_output(libexec/"FolderglassSelfCheck")
     appex = prefix/"Folderglass.app/Contents/PlugIns/FolderglassPreview.appex"
     assert_path_exists appex/"Contents/MacOS/FolderglassPreview"
+    assert_path_exists appex/"Contents/Resources/Folderglass_FolderglassUI.bundle"
   end
 end
