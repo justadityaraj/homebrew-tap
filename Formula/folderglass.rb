@@ -1,8 +1,8 @@
 class Folderglass < Formula
   desc "Quick Look previews for folders, git repos, zip archives and Markdown"
   homepage "https://adityarajsingh.com/folderglass/"
-  url "https://github.com/justadityaraj/folderglass/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "d86559f0086a9aff7868092b6ade5a51f2e959861f63df5e3418cf1e30a4f7db"
+  url "https://github.com/justadityaraj/folderglass/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "093c11af2ef439ca43102d6d83f93f3d6775442908d3ba64fb8d2f4d0d14e6c1"
   license "MIT"
 
   depends_on macos: :sonoma
