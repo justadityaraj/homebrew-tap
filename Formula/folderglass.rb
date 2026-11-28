@@ -1,8 +1,8 @@
 class Folderglass < Formula
   desc "Quick Look previews for folders, git repos, zip archives and Markdown"
   homepage "https://adityarajsingh.com/folderglass/"
-  url "https://github.com/justadityaraj/folderglass/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "093c11af2ef439ca43102d6d83f93f3d6775442908d3ba64fb8d2f4d0d14e6c1"
+  url "https://github.com/justadityaraj/folderglass/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "6af4fd80604d2d7d5389583637467009162a9a9cff339249f18ea49def3f02bf"
   license "MIT"
 
   depends_on macos: :sonoma
@@ -21,6 +21,10 @@ class Folderglass < Formula
     (app/"Resources").install "Resources/AppIcon.icns"
     (appex/"MacOS").install bin_path/"FolderglassPreview"
     appex.install "Resources/Preview-Info.plist" => "Info.plist"
+    strings = bin_path/"Folderglass_FolderglassUI.bundle"
+    cp_r strings, app/"Resources"
+    (appex/"Resources").mkpath
+    cp_r strings, appex/"Resources"
     libexec.install bin_path/"FolderglassSelfCheck"
     system "codesign", "--force", "--sign", "-", "--entitlements", "Resources/Preview.entitlements",
            prefix/"Folderglass.app/Contents/PlugIns/FolderglassPreview.appex"
@@ -42,5 +46,6 @@ class Folderglass < Formula
     assert_match "All checks passed", shell_output(libexec/"FolderglassSelfCheck")
     appex = prefix/"Folderglass.app/Contents/PlugIns/FolderglassPreview.appex"
     assert_path_exists appex/"Contents/MacOS/FolderglassPreview"
+    assert_path_exists appex/"Contents/Resources/Folderglass_FolderglassUI.bundle"
   end
 end
